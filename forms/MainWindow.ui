@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+  <class>MainWindow</class>
+
+  <!-- MainWindow { -->
+  <widget class="QMainWindow" name="mainWindow">
+    <property name="geometry">
+      <rect>
+	<x>0</x>
+	<y>0</y>
+	<width>615</width>
+	<height>393</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>MainWindow</string>
+    </property>
+    <property name="windowIcon">
+      <iconset>
+      <normaloff>:/camera.svg</normaloff>:/camera.svg</iconset>
+    </property>
+
+    <!-- centralwidget { -->
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="verticalLayout">
+	<property name="spacing">
+	  <number>5</number>
+	</property>
+	<property name="leftMargin">
+	  <number>5</number>
+	</property>
+	<property name="topMargin">
+	  <number>5</number>
+	</property>
+	<property name="rightMargin">
+	  <number>5</number>
+	</property>
+	<property name="bottomMargin">
+	  <number>5</number>
+	</property>
+
+	<item> <!-- Work Directory { -->
+	  <layout class="QHBoxLayout" name="horizontalLayout">
+	    <item>
+	      <widget class="QLabel" name="workDirLabel">
+		<property name="maximumSize">
+		  <size>
+		    <width>16777215</width>
+		    <height>22</height>
+		  </size>
+		</property>
+		<property name="text">
+		  <string>Work Directory:</string>
+		</property>
+	      </widget>
+	    </item>
+	    <item>
+	      <widget class="QLineEdit" name="workDirLine">
+		<property name="enabled">
+		  <bool>true</bool>
+		</property>
+		<property name="maximumSize">
+		  <size>
+		    <width>16777215</width>
+		    <height>22</height>
+		  </size>
+		</property>
+		<property name="focusPolicy">
+		  <enum>Qt::ClickFocus</enum>
+		</property>
+		<property name="frame">
+		  <bool>false</bool>
+		</property>
+		<property name="placeholderText">
+		  <string>Work Directory</string>
+		</property>
+	      </widget>
+	    </item>
+	    <item>
+	      <widget class="QPushButton" name="workDirButton">
+		<property name="text">
+		  <string>...</string>
+		</property>
+	      </widget>
+	    </item>
+	  </layout>
+	</item> <!-- } Work Directory -->
+
+	<item>
+	  <widget class="QSplitter" name="splitter">
+	    <property name="sizePolicy">
+	      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+		<horstretch>0</horstretch>
+		<verstretch>0</verstretch>
+	      </sizepolicy>
+	    </property>
+	    <property name="orientation">
+	      <enum>Qt::Horizontal</enum>
+	    </property>
+
+	    <!-- splitter[1] -->
+	    <widget class="WrlGLWidget" name="wrlGLWidget" native="true">
+	      <property name="sizePolicy">
+		<sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+		  <horstretch>1</horstretch>
+		  <verstretch>0</verstretch>
+		</sizepolicy>
+	      </property>
+	    </widget> <!-- name="wrlGLWidget" -->
+
+	    <!-- splitter[0] -->
+	    <widget class="ImgGLWidget" name="imgGLWidget" native="true">
+	      <property name="sizePolicy">
+		<sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+		  <horstretch>7</horstretch>
+		  <verstretch>0</verstretch>
+		</sizepolicy>
+	      </property>
+	    </widget> <!-- name="imgGLWidget" -->
+
+	    <!-- splitter[2] -->
+	    <widget class="QWidget" name="panelsWidget" native="true">
+	      <property name="sizePolicy">
+		<sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+		  <horstretch>0</horstretch>
+		  <verstretch>0</verstretch>
+		</sizepolicy>
+	      </property>
+	      <layout class="QVBoxLayout" name="verticalLayout_2">
+		<property name="spacing">
+		  <number>5</number>
+		</property>
+		<property name="leftMargin">
+		  <number>0</number>
+		</property>
+		<property name="topMargin">
+		  <number>0</number>
+		</property>
+		<property name="rightMargin">
+		  <number>0</number>
+		</property>
+		<property name="bottomMargin">
+		  <number>0</number>
+		</property>
+
+		<item>
+		  <widget class="QComboBox" name="panelCombo">
+		    <property name="sizePolicy">
+		      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+			<horstretch>0</horstretch>
+			<verstretch>0</verstretch>
+		      </sizepolicy>
+		    </property>
+		  </widget> <!-- name="panelCombo" -->
+		</item>
+
+		<item>
+		  <widget class="QWidget" name="currPanelWidget" native="true">
+		    <property name="sizePolicy">
+		      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+			<horstretch>0</horstretch>
+			<verstretch>0</verstretch>
+		      </sizepolicy>
+		    </property>
+		  </widget> <!-- name="currPanelWidget" -->
+		</item>
+
+	      </layout>
+	    </widget> <!-- name="panelWidget" -->
+
+	  </widget> <!-- name="splitter" -->
+	</item>
+
+      </layout>
+
+    </widget> <!-- } centralwidget -->
+    <!-- menubar -->
+
+    <widget class="QMenuBar" name="menubar">
+      <property name="geometry">
+	<rect>
+	  <x>0</x>
+	  <y>0</y>
+	  <width>615</width>
+	  <height>21</height>
+	</rect>
+      </property>
+      <widget class="QMenu" name="menuHelp">
+	<property name="title">
+	  <string>Help</string>
+	</property>
+	<addaction name="actionAbout"/>
+      </widget>
+      <addaction name="menuHelp"/>
+
+    </widget> <!-- } menubar -->
+
+
+    <!-- statusbar -->
+    <widget class="QStatusBar" name="statusbar"/>
+
+    <!-- actionAbout -->
+    <action name="actionAbout">
+      <property name="text">
+	<string>About...</string>
+      </property>
+    </action>
+
+  </widget> <!-- } MainWindow -->
+
+  <customwidgets>
+    <customwidget>
+      <class>ImgGLWidget</class>
+      <extends>QWidget</extends>
+      <header>ImgGLWidget.hpp</header>
+      <container>1</container>
+    </customwidget>
+    <customwidget>
+      <class>WrlGLWidget</class>
+      <extends>QWidget</extends>
+      <header>WrlGLWidget.hpp</header>
+      <container>2</container>
+    </customwidget>
+  </customwidgets>
+
+  <resources/>
+  <connections/>
+
+</ui>

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Standard_vTexture.vert</file>
+        <file>Standard_vTexture.frag</file>
+        <file>camera.svg</file>
+    </qresource>
+</RCC>
